@@ -11,6 +11,6 @@ RUN CGO_ENABLED=1 xcaddy build \
 FROM caddy:2.10.2
 
 # Install brotli
-RUN apk --no-cache update
+RUN apk --no-cache update && apk add --no-cache brotli
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
